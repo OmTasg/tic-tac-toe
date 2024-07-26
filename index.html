@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Tic Tac Toe</h1>
+  
+  <button id="start-game">Start Game</button>
+  <div id="gameContainer">
+    <div>
+      <div class="gameTile" id="btnx1"></div>
+      <div class="gameTile" id="btnx2"></div>
+      <div class="gameTile" id="btnx3"></div>
+    </div>
+    
+    <div>
+      <div class="gameTile" id="btnx4"></div>
+      <div class="gameTile" id="btnx5"></div>
+      <div class="gameTile" id="btnx6"></div>
+    </div>
+    
+    <div>
+      <div class="gameTile" id="btnx7"></div>
+      <div class="gameTile" id="btnx8"></div>
+      <div class="gameTile" id="btnx9"></div>
+    </div>
+  </div>
+</div>
+<div id = "sidebar">
+  <div>
+    <h2 id="player"></h2>
+    <h1 id="winner"></h1>
+    <button id = "endnewbtn" style="display: none;" onclick="restart()">Restart</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+body {
+  margin-left: 20px;
+}
+
+.gameTile {
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  margin-top: -10px;
+  margin-right: -4.5px;
+  font-size: 50px;
+  padding: 50px;
+  border: 2px solid black;
+}
+
+#start-game {
+  width: 250px;
+  height: 20px;
+  padding-bottom: 95px;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 40px;
+}
+
+#gameContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  line-height: 100px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+}
+
+#endnewbtn {
+  width: 250px;
+  height: 20px;
+  padding-bottom: 95px;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 40px;
+}
+
+#player {
+  font-size: 50px;
+  color: 12;
+}
+
+.gameTile {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: row;
+}
