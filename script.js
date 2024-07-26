@@ -72,6 +72,12 @@ function checkRows(){
         winnerText.innerText = (`${document.getElementById("btnx1").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx1").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
     
@@ -79,6 +85,12 @@ function checkRows(){
         winnerText.innerText = (`${document.getElementById("btnx4").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx4").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
 
@@ -86,6 +98,12 @@ function checkRows(){
         winnerText.innerText = (`${document.getElementById("btnx7").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx7").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
 }   
@@ -94,6 +112,12 @@ function checkColumns(){
         winnerText.innerText = (`${document.getElementById("btnx1").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx1").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
     
@@ -101,6 +125,12 @@ function checkColumns(){
         winnerText.innerText = (`${document.getElementById("btnx2").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx2").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
 
@@ -108,6 +138,12 @@ function checkColumns(){
         winnerText.innerText = (`${document.getElementById("btnx3").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx3").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
 }   
@@ -118,6 +154,12 @@ function checkDiagonals(){
         winnerText.innerText = (`${document.getElementById("btnx1").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx1").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
     
@@ -125,6 +167,12 @@ function checkDiagonals(){
         winnerText.innerText = (`${document.getElementById("btnx3").innerText} won`)
         hasStart = false
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
+        if(document.getElementById("btnx3").innerText === "X"){
+            winnerText.style.color = "red"
+        } else{
+            winnerText.style.color = "green"
+        }
 
     }
 
@@ -135,6 +183,7 @@ function checkTie(){
      && (btnx8.innerText != "") && (btnx9.innerText != "")){
         winnerText.innerText = ("you tied")
         endBTN.style.display = "block"
+        currentPlayer.textContent = ""
      }
 }
 function aiPlay(){
