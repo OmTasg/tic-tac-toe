@@ -19,15 +19,16 @@ let isPlayerTurn = true
 const winnerText = document.getElementById("winner")
 let gameEnd = false
 const endBTN = document.getElementById("endnewbtn")
-
-
+let chosenTile
+let emptyTiles = []
+let moveFound = false
 
 
 startGame.addEventListener("click", function (){
     start()
     currentPlayer.textContent = "X turn"
+    currentPlayer.style.color = "red"
 })
-
 function start() {
     hasStart = true
     if (hasStart === true) {
@@ -63,9 +64,13 @@ function start() {
     }
     
 }
-
 function playerTurn(x){
     currentPlayer.textContent = `${x} turn`
+    if(currentPlayer.textContent === "X turn"){
+        currentPlayer.style.color = "red"
+    } else{
+        currentPlayer.style.color = "green"
+    }
 
 }
 function checkRows(){
@@ -182,14 +187,12 @@ function checkTie(){
     if((btnx1.innerText != "")&& (btnx2.innerText != "") && (btnx3.innerText != "") && (btnx4.innerText != "")
      && (btnx5.innerText != "") && (btnx6.innerText != "") && (btnx7.innerText != "")
      && (btnx8.innerText != "") && (btnx9.innerText != "")){
-        winnerText.innerText = ("you tied")
+        winnerText.innerText = ("You Tied")
+        winnerText.style.color = "black"
         endBTN.style.display = "block"
         currentPlayer.textContent = ""
      }
 }
-let chosenTile
-let emptyTiles = []
-let moveFound = false
 function aiPlay(){
     moveFound = false
     if(hasStart === true){
@@ -256,7 +259,6 @@ function aiMove(condition, fill){
     
 
 } 
-
 function aiOffense(){
     
     //check rows
@@ -304,7 +306,6 @@ function aiOffense(){
     
 
 }
-
 function aiDefense(){
     //check rows
     aiMove(btnx1.innerText === "X" && btnx2.innerText === "X", btnx3)

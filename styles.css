@@ -11,16 +11,65 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
+.fuzzy-bubbles-regular {
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fuzzy-bubbles-bold {
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .gameTile {
   width: 55px;
   height: 55px;
   background-color: white;
   margin-top: -10px;
   margin-right: -4.5px;
-  font-size: 50px;
+  font-size: 60px;
   padding: 50px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Fuzzy Bubbles";
   border: 2px solid black;
+  font-weight: 700;
+}
+
+#btnx1 {
+  border-top: white;
+  border-left: white;
+}
+
+#btnx4 {
+  border-top: white;
+}
+#btnx7 {
+  border-top: white;
+  border-right: white;
+}
+
+#btnx2 {
+  border-left: white;
+}
+#btnx8 {
+  border-right: white;
+}
+#btnx3 {
+  border-left: white;
+  border-bottom: white;
+}
+#btnx6 {
+  border-bottom: white;
+}
+
+#btnx9 {
+  border-right: white;
+  border-bottom: white;
+}
+
+.gameTile:hover {
+  background-color: rgb(240, 240, 240);
 }
 
 #start-game {
@@ -31,9 +80,12 @@ body {
   background-color: white;
   font-size: 40px;
 }
+#start-game:hover {
+  background-color: rgb(240, 240, 240);
+}
 
 #gameContainer {
-  margin-top: 30px;
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -55,6 +107,10 @@ button {
   border-radius: 3px;
   background-color: white;
   font-size: 40px;
+}
+
+#endnewbtn:hover {
+  background-color: rgb(240, 240, 240);
 }
 
 #player {
