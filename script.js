@@ -25,6 +25,7 @@ const endBTN = document.getElementById("endnewbtn")
 
 startGame.addEventListener("click", function (){
     start()
+    currentPlayer.textContent = "X turn"
 })
 
 function start() {
@@ -186,9 +187,13 @@ function checkTie(){
         currentPlayer.textContent = ""
      }
 }
+let chosenTile
+let emptyTiles = []
+let moveFound = false
 function aiPlay(){
+    moveFound = false
     if(hasStart === true){
-        let emptyTiles = []
+        emptyTiles = []
 
         for(i = 1; i < 10; i++){
             let aiTile = document.getElementById(`btnx${i}`)
@@ -198,9 +203,11 @@ function aiPlay(){
         }
 
             if(emptyTiles.length>0){
-                let randomNum = Math.floor(Math.random()*emptyTiles.length)
-                let chosenTile = emptyTiles[randomNum]
+                aiOffense()
+                console.log(chosenTile  )
                 fillTile(chosenTile)
+                
+                
                 
             }else{
                 console.log("game over")
@@ -240,10 +247,110 @@ function fillTile(id) {
         playerTurn(playerNameX)
     }
 }
+function aiMove(condition, fill){
+    if(condition && fill.innerText === "" && !moveFound){
+        chosenTile = fill
+        moveFound = true
+        
+    }
+    
 
+} 
 
+function aiOffense(){
+    
+    //check rows
+    aiMove(btnx1.innerText === "O" && btnx2.innerText === "O", btnx3)
+    aiMove(btnx2.innerText === "O" && btnx3.innerText === "O", btnx1)
+    aiMove(btnx1.innerText === "O" && btnx3.innerText === "O", btnx2)
 
+    aiMove(btnx4.innerText === "O" && btnx5.innerText === "O", btnx6)
+    aiMove(btnx5.innerText === "O" && btnx6.innerText === "O", btnx4)
+    aiMove(btnx4.innerText === "O" && btnx6.innerText === "O", btnx5)
 
+    aiMove(btnx7.innerText === "O" && btnx8.innerText === "O", btnx9)
+    aiMove(btnx8.innerText === "O" && btnx9.innerText === "O", btnx7)
+    aiMove(btnx7.innerText === "O" && btnx9.innerText === "O", btnx8)
+
+    //check columns
+
+    aiMove(btnx1.innerText === "O" && btnx4.innerText === "O", btnx7)
+    aiMove(btnx4.innerText === "O" && btnx7.innerText === "O", btnx1)
+    aiMove(btnx1.innerText === "O" && btnx7.innerText === "O", btnx4)
+
+    aiMove(btnx2.innerText === "O" && btnx5.innerText === "O", btnx8)
+    aiMove(btnx5.innerText === "O" && btnx8.innerText === "O", btnx2)
+    aiMove(btnx2.innerText === "O" && btnx8.innerText === "O", btnx5)
+
+    aiMove(btnx3.innerText === "O" && btnx6.innerText === "O", btnx9)
+    aiMove(btnx6.innerText === "O" && btnx9.innerText === "O", btnx3)
+    aiMove(btnx3.innerText === "O" && btnx9.innerText === "O", btnx6)
+
+    //check diagonals
+
+    aiMove(btnx1.innerText === "O" && btnx5.innerText === "O", btnx9)
+    aiMove(btnx5.innerText === "O" && btnx9.innerText === "O", btnx1)
+    aiMove(btnx1.innerText === "O" && btnx9.innerText === "O", btnx5)
+
+    aiMove(btnx3.innerText === "O" && btnx5.innerText === "O", btnx7)
+    aiMove(btnx5.innerText === "O" && btnx7.innerText === "O", btnx3)
+    aiMove(btnx3.innerText === "O" && btnx7.innerText === "O", btnx5)
+
+    
+
+    if(!moveFound){
+        aiDefense()
+    }
+    
+
+}
+
+function aiDefense(){
+    //check rows
+    aiMove(btnx1.innerText === "X" && btnx2.innerText === "X", btnx3)
+    aiMove(btnx2.innerText === "X" && btnx3.innerText === "X", btnx1)
+    aiMove(btnx1.innerText === "X" && btnx3.innerText === "X", btnx2)
+
+    aiMove(btnx4.innerText === "X" && btnx5.innerText === "X", btnx6)
+    aiMove(btnx5.innerText === "X" && btnx6.innerText === "X", btnx4)
+    aiMove(btnx4.innerText === "X" && btnx6.innerText === "X", btnx5)
+
+    aiMove(btnx7.innerText === "X" && btnx8.innerText === "X", btnx9)
+    aiMove(btnx8.innerText === "X" && btnx9.innerText === "X", btnx7)
+    aiMove(btnx7.innerText === "X" && btnx9.innerText === "X", btnx8)
+
+    //check columns
+
+    aiMove(btnx1.innerText === "X" && btnx4.innerText === "X", btnx7)
+    aiMove(btnx4.innerText === "X" && btnx7.innerText === "X", btnx1)
+    aiMove(btnx1.innerText === "X" && btnx7.innerText === "X", btnx4)
+
+    aiMove(btnx2.innerText === "X" && btnx5.innerText === "X", btnx8)
+    aiMove(btnx5.innerText === "X" && btnx8.innerText === "X", btnx2)
+    aiMove(btnx2.innerText === "X" && btnx8.innerText === "X", btnx5)
+
+    aiMove(btnx3.innerText === "X" && btnx6.innerText === "X", btnx9)
+    aiMove(btnx6.innerText === "X" && btnx9.innerText === "X", btnx3)
+    aiMove(btnx3.innerText === "X" && btnx9.innerText === "X", btnx6)
+
+    //check diagonals
+
+    aiMove(btnx1.innerText === "X" && btnx5.innerText === "X", btnx9)
+    aiMove(btnx5.innerText === "X" && btnx9.innerText === "X", btnx1)
+    aiMove(btnx1.innerText === "X" && btnx9.innerText === "X", btnx5)
+
+    aiMove(btnx3.innerText === "X" && btnx5.innerText === "X", btnx7)
+    aiMove(btnx5.innerText === "X" && btnx7.innerText === "X", btnx3)
+    aiMove(btnx3.innerText === "X" && btnx7.innerText === "X", btnx5)
+
+   
+    if(!moveFound){
+
+        let randomNum = Math.floor(Math.random()*emptyTiles.length)
+        chosenTile = emptyTiles[randomNum]
+    }
+    
+}
 
 
 
